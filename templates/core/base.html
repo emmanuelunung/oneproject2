@@ -37,10 +37,11 @@
           <a class="nav-link" href="{% url 'core:logout' %}">Logout</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+       <form class="d-flex mx-auto" role="search" action="{% url 'core:search' %}" method="GET">
+      <input class="form-control me-2" type="search" placeholder="Find items..." aria-label="Search" name="query" value="{{ query }}">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+
     </div>
   </div>
 </nav>

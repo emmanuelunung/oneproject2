@@ -7,6 +7,20 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+def search(request):
+    query = request.GET.get("query", "")
+
+    products = Product.objects.filter(Q(name_icontains=query) | Q(description_icontains=query))
+
+    context = {
+        "query": query,
+        "products": products
+
+    }
+    return render(request, "core/search.html", context)
+
+
+
 def delete_view(request, pk):
     product = get_object_or_404(Product, pk=pk, created_by=request.user)
 

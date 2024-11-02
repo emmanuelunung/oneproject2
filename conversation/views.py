@@ -5,9 +5,11 @@ from core.models import Product
 
 from .models import Conversation, ConversationMessage
 from .forms import ConversationMessageForm
+from django.db.models import Q
 
 
 # Create your views here.
+
 
 
 def detail_inbox(request, pk):

@@ -9,4 +9,5 @@ urlpatterns = [
     path("inbox", views.inbox, name="inbox"),
     path("detail/<int:pk>/", views.detail_inbox, name="detail"),
 
+
 ]
