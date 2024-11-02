@@ -13,6 +13,8 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+import dj_database_url
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -84,6 +86,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+DATABASES['defauilt'] = dj_database_url.parse(os.getenv('DATABASE_URL'))
 
 
 # Password validation
